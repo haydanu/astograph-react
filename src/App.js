@@ -1,46 +1,54 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import { CSSTransition } from 'react-transition-group';
-import { Container } from 'reactstrap';
-import { ApolloProvider } from '@apollo/react-hooks';
+import { Container, Row, Col } from 'reactstrap';
 
-import { client } from './config/graphQlClient';
 import NavbarComponent from './components/Navbar';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import BuySell from './components/BuySell';
+import MarketInfo from './components/MarketInfo';
+import OrderBook from './components/OrderBook';
+import MarketHistory from './components/MarketHistory';
 import './App.css';
-
-const routes = [
-  { path: '/', name: 'Home', Component: Home },
-  { path: '/about', name: 'About', Component: About },
-  { path: '/contact', name: 'Contact', Component: Contact }
-];
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <div>
-        <NavbarComponent />
-        <Container className='container'>
-          {routes.map(({ path, Component }) => (
-            <Route key={path} exact path={path}>
-              {({ match }) => (
-                <CSSTransition
-                  in={match != null}
-                  timeout={300}
-                  classNames='page'
-                  unmountOnExit>
-                  <div className='page'>
-                    <Component />
-                  </div>
-                </CSSTransition>
-              )}
-            </Route>
-          ))}
-        </Container>
+    <div>
+      <NavbarComponent />
+      <div className='asset-info'>
+        <Row>
+          <Col> {`<`} </Col>
+          <Col>XLM | Native</Col>
+          <Col>XLM | Native</Col>
+        </Row>
       </div>
-    </ApolloProvider>
+      <div className='template-content'>
+        <Row>
+          <Col>
+            <div className='first-column-wrapper'>
+              <BuySell />
+             
+              <div className='advertise'>
+                <h2>Try StellarX</h2>
+                <p>Join now for totally free</p>
+                <p>peer-to-peer trading</p>
+                <a
+                  href='https://www.stellarx.com/signup'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='signup-button black'>
+                  SIGNUP
+                </a>
+              </div>
+            </div>
+          </Col>
+          <Col>
+            <MarketInfo />
+          </Col>
+          <Col>
+            <OrderBook />
+            <MarketHistory />
+          </Col>
+        </Row>
+      </div>
+    </div>
   );
 }
 
