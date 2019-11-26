@@ -15,13 +15,19 @@
 body {
   margin: 0;
   height: 100%;
-  color: rgb(255, 255, 255);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
   font-family: 'Roboto-Mono';
   font-size: 400;
+  color: rgb(255, 255, 255);
 }
 
 .navbar {
@@ -57,4 +63,147 @@ li a {
 a.dropdown-toggle.nav-link {
   padding-top: 0;
   padding-bottom: 0;
+}
+
+.container {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  overflow: hidden;
+}
+
+a.login-button {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 1rem;
+  letter-spacing: 2.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  height: 56px;
+  line-height: 2rem;
+  min-width: 56px;
+  color: rgb(49, 49, 71);
+  outline: none;
+  margin: 0px;
+  text-decoration: none;
+  border-radius: 2px;
+  padding: 12px 24px;
+  background: rgb(255, 217, 112);
+}
+
+a.login-button,
+a.signup-button {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 1rem;
+  letter-spacing: 2.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  height: 56px;
+  line-height: 2rem;
+  min-width: 56px;
+  color: rgb(49, 49, 71);
+  outline: none;
+  margin: 0px;
+  border-radius: 2px;
+  padding: 12px 24px;
+}
+
+.yellow {
+  background: rgb(255, 217, 112);
+}
+
+a.signup-button.black {
+  color: rgb(255, 255, 255);
+  background: rgb(49, 49, 71);
+}
+
+a.login-button.yellow:hover:not(:disabled) {
+  color: rgb(66, 67, 89);
+  background: rgb(255, 224, 138);
+  text-decoration: none;
+}
+
+a.signup-button.black:hover:not(:disabled) {
+  color: rgb(255, 255, 255);
+  background: rgb(66, 67, 89);
+  text-decoration: none;
+}
+
+.asset-info {
+  border-bottom: 1px solid rgb(49, 49, 71);
+  background: rgb(24, 24, 33);
+  height: 56px;
+}
+
+.template-content {
+  background: rgb(24, 24, 33);
+}
+
+.first-column-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.advertise {
+  background-color: rgb(255, 224, 138);
+  background-image: url('./assets/images/stellar-x.a241e029.png');
+  background-size: 314px;
+  color: rgb(49, 49, 71);
+  height: 294px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: right -75px top 0px;
+  padding: 48px 32px 26px;
+}
+
+.order-book {
+  display: flex;
+  flex-direction: column;
+  background: rgb(24, 24, 33);
+  flex: 1 1 0%;
+  border-color: rgb(49, 49, 71);
+  border-style: solid;
+  border-width: 0px 1px 1px 0px;
+  padding: 24px 16px 16px;
+  overflow: auto;
+  height: 434px;
+}
+
+table {
+  width: 100%;
+}
+
+/* th:nth-child(1), */
+th:nth-child(2),
+/* td:nth-child(1), */
+td:nth-child(2) {
+  width: 123px;
+}
+
+th:nth-child(1),
+/* td:nth-child(1), */
+td:nth-child(1) {
+  width: 145px;
+}
+
+table thead tr th,
+table tbody tr td {
+  text-align: right;
+}
+
+th {
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+td {
+  font-size: 10px;
 }
