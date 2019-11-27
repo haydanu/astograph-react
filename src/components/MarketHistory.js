@@ -53,8 +53,11 @@ export default function MarketHistory() {
   }
 
   return (
-    <div className='table-dark table-responsive'>
-      <table>
+    <div className='market-history basePadding'>
+      <div className='market-header'>
+        <nav> market history</nav>
+      </div>
+      <table className='table-responsive'>
         <thead>
           <tr>
             <th>PRICE (ETH)</th>

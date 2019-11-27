@@ -15,15 +15,13 @@ import { client } from '../config/graphQlClient';
 import BuySellForm from './BuySellForm';
 
 const test = gql`
-  {
-    subscription {
-      tick(
-        selling: "native"
-        buying: "ETH-GBVOL67TMUQBGL4TZYNMY3ZQ5WGQYFPFD5VJRWXR72VA33VFNL225PL5"
-      ) {
-        bestBuy: bestAsk
-        bestSell: bestBid
-      }
+  subscription {
+    tick(
+      selling: "native"
+      buying: "ETH-GBVOL67TMUQBGL4TZYNMY3ZQ5WGQYFPFD5VJRWXR72VA33VFNL225PL5"
+    ) {
+      bestBuy: bestAsk
+      bestSell: bestBid
     }
   }
 `;
@@ -71,7 +69,7 @@ const BuySell = props => {
   }, []);
 
   return (
-    <div>
+    <div className='basePadding'>
       <Nav tabs>
         <NavItem>
           <NavLink

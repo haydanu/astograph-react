@@ -44,57 +44,65 @@ export default function OrderBook() {
   let askSum = 0;
 
   return (
-    <div className='order-book'>
-      <div>ORDER BOOK</div>
-      <table>
-        <thead>
-          <tr>
-            <th>SIZE (XLM)</th>
-            <th>SUM</th>
-            <th>PRICE (ETH)</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.asks &&
-            data.bids.map((data, index) => {
-              bidSum += parseInt(data.amount);
-              return (
-                <tr key={index}>
-                  <td>{new Intl.NumberFormat('en-US').format(data.amount)}</td>
-                  <td>{new Intl.NumberFormat('en-US').format(bidSum)}</td>
-                  <td style={{ color: 'rgb(255, 139, 97)' }}>
-                    {Number.parseFloat(data.price).toFixed(7)}
-                  </td>
-                </tr>
-              );
-            })}
-        </tbody>
-      </table>
-      <table>
-        <tbody>
-          <tr>
-            <td colSpan={2}>Sperad (XML)</td>
-            <td>0.000 1.3%</td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <tbody>
-          {data.bids &&
-            data.asks.map((data, index) => {
-              askSum += parseInt(data.amount);
-              return (
-                <tr key={index}>
-                  <td>{new Intl.NumberFormat('en-US').format(data.amount)}</td>
-                  <td>{new Intl.NumberFormat('en-US').format(askSum)}</td>
-                  <td style={{ color: 'rgb(63, 203, 224)' }}>
-                    {Number.parseFloat(data.price).toFixed(7)}
-                  </td>
-                </tr>
-              );
-            })}
-        </tbody>
-      </table>
+    <div>
+      <div className='order-header'>
+        <nav>order book</nav>
+      </div>
+      <div className='order-book'>
+        <table>
+          <thead>
+            <tr>
+              <th>SIZE (XLM)</th>
+              <th>SUM</th>
+              <th>PRICE (ETH)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.asks &&
+              data.bids.map((data, index) => {
+                bidSum += parseInt(data.amount);
+                return (
+                  <tr key={index}>
+                    <td>
+                      {new Intl.NumberFormat('en-US').format(data.amount)}
+                    </td>
+                    <td>{new Intl.NumberFormat('en-US').format(bidSum)}</td>
+                    <td style={{ color: 'rgb(255, 139, 97)' }}>
+                      {Number.parseFloat(data.price).toFixed(7)}
+                    </td>
+                  </tr>
+                );
+              })}
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <td colSpan={2}>Sperad (XML)</td>
+              <td>0.000 1.3%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            {data.bids &&
+              data.asks.map((data, index) => {
+                askSum += parseInt(data.amount);
+                return (
+                  <tr key={index}>
+                    <td>
+                      {new Intl.NumberFormat('en-US').format(data.amount)}
+                    </td>
+                    <td>{new Intl.NumberFormat('en-US').format(askSum)}</td>
+                    <td style={{ color: 'rgb(63, 203, 224)' }}>
+                      {Number.parseFloat(data.price).toFixed(7)}
+                    </td>
+                  </tr>
+                );
+              })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

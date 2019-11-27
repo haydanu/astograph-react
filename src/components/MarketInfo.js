@@ -43,7 +43,7 @@ export default function MarketInfo() {
     return <div>Loading</div>;
   }
   return (
-    <div>
+    <div className='basePadding'>
       {data &&
         data.map((data, index) => (
           <div key={index}>

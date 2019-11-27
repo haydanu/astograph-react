@@ -16,18 +16,30 @@ body {
   margin: 0;
   height: 100%;
   min-height: 100vh;
-  overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
+  overflow: hidden;
 }
 
 * {
   box-sizing: border-box;
   font-family: 'Roboto-Mono';
   font-size: 400;
+}
+
+body,
+html,
+button {
   color: rgb(255, 255, 255);
+}
+
+a {
+  text-decoration: none;
+}
+
+.basePadding {
+  padding: 24px 16px;
+  border-color: rgb(49, 49, 71);
+  border-style: solid;
+  border-width: 0px 1px 1px 0px;
 }
 
 .navbar {
@@ -135,20 +147,17 @@ a.signup-button.black:hover:not(:disabled) {
   text-decoration: none;
 }
 
-.asset-info {
-  border-bottom: 1px solid rgb(49, 49, 71);
-  background: rgb(24, 24, 33);
-  height: 56px;
-}
-
 .template-content {
   background: rgb(24, 24, 33);
+  color: rgb(255, 255, 255);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .first-column-wrapper {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: space-between;
 }
 
@@ -156,7 +165,7 @@ a.signup-button.black:hover:not(:disabled) {
   background-color: rgb(255, 224, 138);
   background-image: url('./assets/images/stellar-x.a241e029.png');
   background-size: 314px;
-  color: rgb(49, 49, 71);
+  color: rgb(49, 49, 71) !important;
   height: 294px;
   position: relative;
   background-repeat: no-repeat;
@@ -164,7 +173,8 @@ a.signup-button.black:hover:not(:disabled) {
   padding: 48px 32px 26px;
 }
 
-.order-book {
+.order-book,
+.market-history {
   display: flex;
   flex-direction: column;
   background: rgb(24, 24, 33);
@@ -172,26 +182,32 @@ a.signup-button.black:hover:not(:disabled) {
   border-color: rgb(49, 49, 71);
   border-style: solid;
   border-width: 0px 1px 1px 0px;
-  padding: 24px 16px 16px;
   overflow: auto;
   height: 434px;
+}
+
+.market-history {
+  height: 220px !important;
+}
+
+.order-header,
+.market-header {
+  background: rgb(49, 49, 71);
+  padding: 0px 16px;
+  text-transform: uppercase;
+}
+
+.order-header nav,
+.market-header nav {
+  line-height: 2.5rem;
 }
 
 table {
   width: 100%;
 }
 
-/* th:nth-child(1), */
-th:nth-child(2),
-/* td:nth-child(1), */
-td:nth-child(2) {
-  width: 123px;
-}
-
-th:nth-child(1),
-/* td:nth-child(1), */
-td:nth-child(1) {
-  width: 145px;
+table thead {
+  position: relative;
 }
 
 table thead tr th,
@@ -201,9 +217,18 @@ table tbody tr td {
 
 th {
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 12px;
+  width: 88px;
+  max-width: 88px;
 }
 
 td {
   font-size: 10px;
+  width: 88px;
+  max-width: 88px;
+}
+
+.apexcharts-tooltip {
+  background: #f3f3f3;
+  color: orange;
 }
