@@ -15,7 +15,7 @@ export default function TradeHeader() {
             viewBox='0 0 24 24'>
             <path
               fill='#313147'
-              fill-rule='evenodd'
+              fillRule='evenodd'
               d='M10.001 12L20 2h-5.656l-10 10 10 10H20z'></path>
           </svg>
         </Link>
